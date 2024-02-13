@@ -5,8 +5,12 @@
   text-transform: uppercase;
   text-align: center;
   color: #373737;
+  max-width: 1023px;
   @media (max-width: 1024px) {
     font-size: 58px;
+  }
+  @media(max-width: 768px) {
+    max-width: 568px;
   }
 
   @media (max-width: 567px) {

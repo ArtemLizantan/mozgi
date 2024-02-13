@@ -4,6 +4,7 @@
   min-height: calc(100vh - 97px);
   justify-content: center;
   align-items: center;
+  position: relative;
   &__body {
     position: relative;
     max-width: fit-content;
@@ -27,6 +28,28 @@
     @media (max-width: 1024px) {
       bottom: -129%;
       right: 19%;
+    }
+  }
+  &__links {
+    @media(max-width: 567px) {
+      display: none;
+    }
+  }
+  &__link {
+    position: absolute;
+    &:nth-child(1) {
+      left: -18px;
+      top: 52%;
+      transform: translate(0%, 100%) rotate(-90deg);
+    }
+    &:nth-child(2) {
+      right: -10px;
+      top: 52%;
+      transform: translate(0%, 100%) rotate(90deg);
+    }
+    &:nth-child(3) {
+      bottom: 20px;
+      left: 50%;
     }
   }
 }

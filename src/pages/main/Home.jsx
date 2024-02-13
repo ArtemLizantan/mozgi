@@ -1,17 +1,13 @@
-import Header from "../../components/header/Header";
 import Ticker from "../../components/ticker/Ticker";
 import Hero from "./sections/hero/Hero";
-
+import transition from "../../transition";
 const Home = () => {
   return (
     <>
-      <Header />
-      <main className="main">
-        <Hero />
-        <Ticker />
-      </main>
+      <Hero />
+      <Ticker />
     </>
   );
 };
 
-export default Home;
+export default transition(Home);
