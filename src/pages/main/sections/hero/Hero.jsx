@@ -45,7 +45,7 @@ const Hero = () => {
       </div>
       <div className="hero__links">
         <div className="hero__link">
-          <InfoLink path={"/test-page"} text={"W here?"} />
+          <InfoLink path={"/test-page"} text={"Where?"} />
         </div>
         <div className="hero__link">
           <InfoLink path={"/test-page"} text={"what?"} />
