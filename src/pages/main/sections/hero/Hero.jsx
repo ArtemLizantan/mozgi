@@ -45,13 +45,13 @@ const Hero = () => {
       </div>
       <div className="hero__links">
         <div className="hero__link">
-          <InfoLink path={"/test-page"} text={"Where?"} />
+          <InfoLink path={"/mozgi/test-page"} text={"Where?"} />
         </div>
         <div className="hero__link">
-          <InfoLink path={"/test-page"} text={"what?"} />
+          <InfoLink path={"/mozgi/test-page"} text={"what?"} />
         </div>
         <div className="hero__link">
-          <InfoLink path={"/test-page"} text={"who?"} />
+          <InfoLink path={"/mozgi/test-page"} text={"who?"} />
         </div>
       </div>
     </div>

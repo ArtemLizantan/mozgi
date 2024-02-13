@@ -6,15 +6,15 @@ import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   const location = useLocation();
-  console.log(location);
+
   return (
     <>
       <Header />
       <main className="main">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/test-page" element={<TestPage />} />
+            <Route path="/mozgi" element={<Home />} />
+            <Route path="/mozgi/test-page" element={<TestPage />} />
           </Routes>
         </AnimatePresence>
       </main>

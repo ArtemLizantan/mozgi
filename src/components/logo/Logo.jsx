@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./logo.scss"
 const Logo = () => {
   return (
-    <Link to={"/"} className="logo">
+    <Link to={"/mozgi"} className="logo">
       <svg
         width="85"
         height="46"
