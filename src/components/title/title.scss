@@ -1,0 +1,15 @@
+.title {
+  font-weight: 700;
+  font-size: 82px;
+  line-height: 110%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #373737;
+  @media (max-width: 1024px) {
+    font-size: 58px;
+  }
+
+  @media (max-width: 567px) {
+    font-size: 34px;
+  }
+}

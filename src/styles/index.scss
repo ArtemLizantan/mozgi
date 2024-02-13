@@ -1,0 +1,13 @@
+@import "reset.scss";
+@import "normalize.css";
+@import "root.scss";
+@import "fonts.scss";
+
+body {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: #373737;
+  background: #bebebe;
+  overflow: hidden;
+}
