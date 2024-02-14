@@ -1,43 +1,43 @@
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
 import Title from "../../../../components/title/Title";
 import "./hero.scss";
 import bg from "../../../../img/bg.svg";
 import Circle from "../../../../components/circle/Circle";
-import { useEffect, useState } from "react";
 import InfoLink from "../../../../components/infoLink/InfoLink";
 
 const Hero = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  useLayoutEffect(() => {
+    const tl = gsap.timeline();
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
+    gsap.set(".hero__circle", { scale: -1, opacity: -1 });
+    gsap.set(".hero__links", { opacity: -1 });
+    gsap.set(".hero__title", { opacity: -1, scale: -1 });
 
-    document.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
+    tl.to(".hero__title", {
+      duration: 1,
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
+    });
+    tl.to(
+      ".hero__circle",
+      { duration: 1.2, scale: 1, opacity: 1, ease: "power2.out" },
+      ">-0.5"
+    );
+    tl.to(
+      ".hero__links",
+      { duration: 1.5, opacity: 1, ease: "power2.out" },
+      ">-0.5"
+    );
   }, []);
-
-  const screenWidth = window.innerWidth;
-  const isMobile = screenWidth <= 1024;
-
-  const translateX = isMobile ? 0 : (position.x - screenWidth / 2) * 0.02;
-  const translateY = isMobile ? 0 : (position.y - window.innerHeight / 2) * 0.02;
 
   return (
     <div className="hero">
       <div className="hero__body">
         <img className="hero__bg" src={bg} alt="" />
-        <div
-          style={{
-            position: "relative",
-            transform: `translate(${translateX}px, ${translateY}px)`,
-          }}
-          className="hero__title"
-        >
-          <Title text="FULL-CYCLE <br/> EVENT AGENCY" />
+        <div className="hero__title">
+          <Title text="FULL-CYCLE EVENT AGENCY" />
         </div>
         <div className="hero__circle">
           <Circle />
@@ -45,13 +45,13 @@ const Hero = () => {
       </div>
       <div className="hero__links">
         <div className="hero__link">
-          <InfoLink path={"/mozgi/test-page"} text={"Where?"} />
+          <InfoLink path={"/test-page"} text={"Where?"} />
         </div>
         <div className="hero__link">
-          <InfoLink path={"/mozgi/test-page"} text={"what?"} />
+          <InfoLink path={"/test-page"} text={"what?"} />
         </div>
         <div className="hero__link">
-          <InfoLink path={"/mozgi/test-page"} text={"who?"} />
+          <InfoLink path={"/test-page"} text={"who?"} />
         </div>
       </div>
     </div>

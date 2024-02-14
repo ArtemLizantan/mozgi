@@ -7,7 +7,7 @@ const TestPage = () => {
       <div className="test">
         <div className="test__block">
           This is test page!
-          <InfoLink path={"/mozgi"} text={"Back to home page"} />
+          <InfoLink path={"/"} text={"Back to home page"} />
         </div>
       </div>
     </>

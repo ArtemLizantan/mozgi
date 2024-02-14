@@ -29,6 +29,14 @@
       bottom: -129%;
       right: 19%;
     }
+    @media (max-width: 768px) {
+      bottom: -70%;
+      right: 19%;
+    }
+    @media (max-width: 567px) {
+      bottom: -100%;
+      right: 15%;
+    }
   }
   &__links {
     @media(max-width: 567px) {

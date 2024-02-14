@@ -31,13 +31,6 @@
   margin-left: 5px;
   align-items: center;
   gap: 5px;
-  @media (max-width: 567px) {
-    left: 0;
-    top: 100%;
-    flex-direction: column;
-    margin-left: 0;
-    margin-top: 5px;
-  }
 }
 
 .menu-dropdown > * {
@@ -76,31 +69,62 @@
     @media (max-width: 567px) {
       font-size: 12px;
       padding: 5px 0;
+      transition: unset;
     }
   }
 }
 
 .menu:not(:hover) > .menu-dropdown > * {
-  visibility: hidden;
-  height: 0;
-  padding-top: 0;
-  color: rgba(25, 25, 25, 0);
-  transition: 0.5s 0.1s height, 0.5s 0.1s padding, 0.5s 0.1s margin, 0.3s color,
-    0.6s visibility;
-  z-index: 99;
+  @media (min-width: 768px) {
+    visibility: hidden;
+    height: 0;
+    padding-top: 0;
+    color: rgba(25, 25, 25, 0);
+    transition: 0.5s 0.1s height, 0.5s 0.1s padding, 0.5s 0.1s margin,
+      0.3s color, 0.6s visibility;
+    z-index: 99;
+  }
+}
+
+.menu-dropdown {
+  @media (max-width: 768px) {
+    visibility: hidden;
+    overflow: hidden;
+    pointer-events: none;
+    li {
+      transition: all 0.2s ease;
+      opacity: 0;
+    }
+    &._active {
+      visibility: visible;
+      pointer-events: unset;
+      overflow: visible;
+      li {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .switch {
-  transition: all 0.4s;
-  &:hover {
-    border-radius: 50%;
-    background-color: #ffcb46;
+  @media (max-width: 567px) {
+    &._active {
+      background-color: #ffcb46;
+      border-radius: 50%;
+    }
   }
-  &:hover {
-    ~ .header__language {
-      .header__language-item {
-        overflow: visible;
-        opacity: 1;
+  @media (min-width: 768px) {
+    transition: all 0.4s;
+    &:hover {
+      border-radius: 50%;
+      background-color: #ffcb46;
+    }
+    &:hover {
+      ~ .header__language {
+        .header__language-item {
+          overflow: visible;
+          opacity: 1;
+        }
       }
     }
   }

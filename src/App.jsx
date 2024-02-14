@@ -13,8 +13,8 @@ const App = () => {
       <main className="main">
         <AnimatePresence mode="wait" initial={false}>
           <Routes location={location} key={location.pathname}>
-            <Route path="/mozgi" element={<Home />} />
-            <Route path="/mozgi/test-page" element={<TestPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/test-page" element={<TestPage />} />
           </Routes>
         </AnimatePresence>
       </main>

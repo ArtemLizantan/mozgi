@@ -6,21 +6,20 @@
     display: inline-block;
     margin-right: 20px;
   }
+
   &__item {
-    display: flex;
-    align-items: center;
     position: absolute;
+    z-index: -2;
     top: 24%;
     left: 50%;
     white-space: nowrap;
-    z-index: -2;
     &:nth-child(1) {
       transform: translate(-50%, -50%) rotate(150deg);
       @media (max-width: 1024px) {
         transform: translate(-50%, -50%) rotate(135deg);
       }
-      span {
-        animation: tickerAnimationOne 10s linear infinite;
+      @media (max-width: 567px) {
+        transform: translate(-50%, -50%) rotate(124deg);
       }
     }
 
@@ -29,8 +28,8 @@
       @media (max-width: 1024px) {
         transform: translate(-50%, 100%) rotate(315deg);
       }
-      span {
-        animation: tickerAnimationTwo 10s linear infinite;
+      @media (max-width: 567px) {
+        transform: translate(-50%, 100%) rotate(304deg);
       }
     }
 
@@ -43,28 +42,12 @@
       opacity: 0.1;
       white-space: nowrap;
       display: inline-block;
-      // color: black;
       color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #373737;
+      @media (max-width: 567px) {
+        font-size: 42px;
+      }
     }
-  }
-}
-
-@keyframes tickerAnimationOne {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes tickerAnimationTwo {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }

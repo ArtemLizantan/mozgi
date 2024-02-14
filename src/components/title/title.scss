@@ -8,6 +8,7 @@
   max-width: 1023px;
   @media (max-width: 1024px) {
     font-size: 58px;
+    max-width: 724px;
   }
   @media(max-width: 768px) {
     max-width: 568px;
@@ -15,5 +16,6 @@
 
   @media (max-width: 567px) {
     font-size: 34px;
+    max-width: 333px;
   }
 }
