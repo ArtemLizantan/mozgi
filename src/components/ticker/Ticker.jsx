@@ -11,11 +11,7 @@ const Ticker = () => {
     const tickerSpanTwo = document.querySelectorAll(".ticker__span--two");
 
     gsap.set(tickerSpanOne, { xPercent: -100 });
-<<<<<<< HEAD
-    gsap.set(tickerSpanTwo, { xPercent: -100  });
-=======
-    gsap.set(tickerSpanTwo, { xPercent: 10 });
->>>>>>> df523a54993cf41aeb39d8f80f930d8acb7fd03a
+    gsap.set(tickerSpanTwo, { xPercent: -100 });
 
     const tl = gsap.timeline({
       repeat: -1,
@@ -31,12 +27,11 @@ const Ticker = () => {
       },
       0
     );
-
     tl.to(
       tickerSpanTwo,
       {
         duration: 10,
-        xPercent: 0,
+        xPercent: 10,
         ease: "linear",
       },
       0
